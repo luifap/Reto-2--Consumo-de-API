@@ -58,6 +58,7 @@ v-0.0.1
 Autores ✒️
 Maria Ramos- / Desarrolladora
 Luisa Fernanda Arboleda -/ Desarrolladora
+Zharick Valero -/ Desarrolladora
 
 
 Gracias por observar nuestro Proyecto 🤓.
