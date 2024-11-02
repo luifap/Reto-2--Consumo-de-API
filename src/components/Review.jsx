@@ -15,8 +15,6 @@ const Review = ({ productId }) => {
 
   const fetchReviews = async () => {
     try {
-      // Aquí irían las llamadas a la API para obtener las reseñas
-      // Por ahora usaremos datos de ejemplo
       const mockReviews = [
         {
           id: 1,
