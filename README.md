@@ -59,6 +59,7 @@ Autores ✒️
 Maria Ramos- / Desarrolladora
 Luisa Fernanda Arboleda -/ Desarrolladora
 Zharick Valero -/ Desarrolladora
+Leidy Parrado -/ Desarrolladora
 
 
 Gracias por observar nuestro Proyecto 🤓.
