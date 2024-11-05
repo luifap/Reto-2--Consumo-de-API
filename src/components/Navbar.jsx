@@ -17,6 +17,9 @@ const Navbar = () => {
           </Link>
 
           <div className="flex items-center space-x-4">
+          <Link to="/product/:id/customize" className="text-gray-600 hover:text-gray-800">
+              Productos Personalizados
+            </Link>
             <Link to="/cart" className="relative">
               <ShoppingCart className="h-6 w-6" />
               {items.length > 0 && (
