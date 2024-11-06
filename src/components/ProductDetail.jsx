@@ -8,7 +8,6 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -68,8 +67,9 @@ const ProductDetail = () => {
         </div>
       </div>
     )
+ 
   );
-  
+ 
 };
 
 export default ProductDetail;

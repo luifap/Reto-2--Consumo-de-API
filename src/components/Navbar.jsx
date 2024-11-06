@@ -18,6 +18,9 @@ const Navbar = () => {
 
           <div className="flex flex-col md:flex-row items-center w-full md:w-auto">
             <div className="flex items-center mb-2 md:mb-0 md:mr-4">
+              <Link to="/product/:id/customize" className="text-gray-600 hover:text-gray-800">
+                Productos Personalizados
+              </Link>
               <Link to="/cart" className="relative">
                 <ShoppingCart className="h-6 w-6" />
                 {items.length > 0 && (
@@ -27,7 +30,6 @@ const Navbar = () => {
                 )}
               </Link>
             </div>
-
             {isAuthenticated ? (
               <div className="flex items-center mb-2 md:mb-0">
                 <span className="text-sm">¡Hola, {user?.name}!</span>

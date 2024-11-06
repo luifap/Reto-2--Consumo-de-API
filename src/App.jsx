@@ -10,6 +10,7 @@ import Register from './components/Register';
 import CustomProduct from './components/CustomProduct';
 import Blog from './pages/Blog';
 import 'font-awesome/css/font-awesome.min.css';
+import "./index.css"
 
 const App = () => {
   return (
