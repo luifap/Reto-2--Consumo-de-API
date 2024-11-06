@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, updateQuantity, clearCart } from '../redux/cartSlice';
+import { PayPalButtons } from '@paypal/react-paypal-js';
 
 const Cart = () => {
   const { items, total } = useSelector(state => state.cart);
