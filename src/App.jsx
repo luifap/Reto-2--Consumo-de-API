@@ -8,6 +8,9 @@ import Cart from './components/Cart';
 import Login from './components/Login';
 import Register from './components/Register';
 import CustomProduct from './components/CustomProduct';
+import Blog from './pages/Blog';
+import 'font-awesome/css/font-awesome.min.css';
+import "./index.css"
 
 const App = () => {
   return (
@@ -21,6 +24,7 @@ const App = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/product/:id/customize" element={<CustomProduct />} />
           </Routes>
         </div>

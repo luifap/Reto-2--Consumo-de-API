@@ -85,17 +85,18 @@ const CustomProduct = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto mt-8 bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-2xl font-bold mb-6">Personaliza tu Producto</h3>
-      
+    <div className="max-w-4xl mx-auto mt-4 bg-white rounded-xl shadow-lg p-6 md:mt-8">
+      <h3 className="text-3xl font-semibold text-red-600 mb-6">Personaliza tu Producto</h3>
+  
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Contenedor de imagen */}
         <div className="space-y-4">
-          <div className="aspect-square rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+          <div className="aspect-square rounded-lg border border-gray-300 flex items-center justify-center bg-gray-50">
             {uploadedImage ? (
               <img
                 src={uploadedImage}
-                alt="Preview"
-                className="max-h-full max-w-full object-contain"
+                alt="Vista previa"
+                className="max-h-full max-w-full object-contain rounded-lg"
               />
             ) : (
               <div className="text-center text-gray-500">
@@ -108,21 +109,22 @@ const CustomProduct = () => {
               type="file"
               accept="image/*"
               onChange={handleImageUpload}
-              className="w-full"
+              className="w-full border border-gray-300 rounded-lg p-2 text-gray-700 focus:ring-2 focus:ring-gray-400"
             />
           </div>
         </div>
-
+  
+        {/* Formulario de personalización */}
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium mb-2">Selecciona un producto de ropa</label>
+            <label className="block text-sm font-medium text-gray-600 mb-2">Selecciona un producto de ropa</label>
             <select
               onChange={(e) => {
                 const productId = e.target.value;
-                const selected = products .find(item => item.id === Number(productId));
+                const selected = products.find(item => item.id === Number(productId));
                 setSelectedProduct(selected);
               }}
-              className="w-full border rounded-md p-2"
+              className="w-full border border-gray-300 rounded-lg p-2 text-gray-700 focus:ring-2 focus:ring-gray-400"
             >
               <option value="">Selecciona un producto</option>
               {products.map(item => (
@@ -131,72 +133,72 @@ const CustomProduct = () => {
                 </option>
               ))}
             </select>
-            </div>
           </div>
-
-        <div className="space-y-4">
+  
           <div>
-            <label className="block text-sm font-medium mb-2">Texto personalizado</label>
+            <label className="block text-sm font-medium text-gray-600 mb-2">Texto personalizado</label>
             <input
               type="text"
               name="text"
               value={customization.text}
               onChange={handleCustomizationChange}
-              className="w-full border rounded-md p-2"
+              className="w-full border border-gray-300 rounded-lg p-2 text-gray-700 focus:ring-2 focus:ring-gray-400"
               placeholder="Ingresa el texto que deseas agregar"
             />
           </div>
-
+  
           <div>
-            <label className="block text-sm font-medium mb-2">Color del texto</label>
+            <label className="block text-sm font-medium text-gray-600 mb-2">Color del texto</label>
             <input
               type="color"
               name="color"
               value={customization.color}
               onChange={handleCustomizationChange}
-              className="w-full h-10 border rounded-md p-1"
+              className="w-full h-10 p-1 rounded-lg cursor-pointer"
             />
           </div>
-
+  
           <div>
-            <label className="block text-sm font-medium mb-2">Talla</label>
+            <label className="block text-sm font-medium text-gray-600 mb-2">Talla</label>
             <select
               name="size"
               value={customization.size}
               onChange={handleCustomizationChange}
-              className="w-full border rounded-md p-2"
+              className="w-full border border-gray-300 rounded-lg p-2 text-gray-700 focus:ring-2 focus:ring-gray-400"
             >
               {sizes.map(size => (
                 <option key={size} value={size}>{size}</option>
               ))}
             </select>
           </div>
-
+  
           <div>
-            <label className="block text-sm font-medium mb-2">Notas adicionales</label>
+            <label className="block text-sm font-medium text-gray-600 mb-2">Notas adicionales</label>
             <textarea
               name="notes"
               value={customization.notes}
               onChange={handleCustomizationChange}
-              className="w-full border rounded-md p-2"
+              className="w-full border border-gray-300 rounded-lg p-2 text-gray-700 focus:ring-2 focus:ring-gray-400"
               rows="4"
               placeholder="Instrucciones especiales para la personalización"
             />
           </div>
-
-          <div className="mt-6">
+  
+          <div className="mt-6 text-center">
             <button
               onClick={handleAddToCart}
-              className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400"
+              className="w-full bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 disabled:bg-red-400"
               disabled={!isAuthenticated}
             >
-              Agregar al carrito (+ $10 por producto personalizado)
+              Agregar al carrito
             </button>
+            <p className="mt-2 text-gray-700 font-semibold">(+ $10 por producto personalizado)</p>
           </div>
         </div>
       </div>
     </div>
   );
+  
 };
 
 export default CustomProduct;
