@@ -30,7 +30,7 @@ const Cart = () => {
           items.map(item => (
             <div key={item.id} className="flex items-center border-b border-gray-200 py-3">
               <img
-                src={item.images[0]}
+                src={item.images}
                 alt={item.title}
                 className="w-16 h-16 object-cover rounded shadow-sm"
               />

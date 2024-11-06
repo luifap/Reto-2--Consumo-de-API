@@ -1,14 +1,17 @@
+
+
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
 
 const ProductDetail = () => {
-  const { id } = useParams(); 
+  const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -52,8 +55,7 @@ const ProductDetail = () => {
                 onClick={handleBack}
                 className="text-red-500 hover:text-red-700 font-semibold flex items-center"
               >
-                <span className="material-icons mr-2">Volver a productos</span> 
-                
+                Volver a productos
               </button>
   
               <button
@@ -67,9 +69,7 @@ const ProductDetail = () => {
         </div>
       </div>
     )
- 
   );
- 
 };
 
 export default ProductDetail;
