@@ -28,7 +28,9 @@ const Cart = () => {
         {items.length === 0 ? (
           <p className="text-center text-gray-500 italic">Tu carrito está vacío.</p>
         ) : (
-          items.map(item => (
+          items.map(item => {
+            console.log(item.images)
+            return (
             <div key={item.id} className="flex items-center border-b border-gray-200 py-3">
               <img
                 src={item.images}
@@ -61,7 +63,7 @@ const Cart = () => {
                 Eliminar ❌
               </button>
             </div>
-          ))
+          )})
         )}
         <div className="mt-5">
           <div className="text-lg font-semibold text-gray-900">Total: ${total}</div>
